@@ -14,7 +14,7 @@ const init = (product,price) =>{
 const numero = numero =>{
     return numero;
 }
-
+asdasdasd
 const iva = (iva1,price) => {
     iva1 = ((iva1/100)*parseInt(price))+parseInt(price);
     ivaExterno = iva1;
