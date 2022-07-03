@@ -3,16 +3,33 @@
     grid-template-areas: 
     "products1 products2"
     "sect1 sect2"
-    "sect1 sect2"
+    ". sect2"
     ;
     .main-section-1{
         grid-area: sect1;
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
-        form{
+        margin-left: auto;
+        margin-right: auto;
+        form{ 
             border: .1px solid black;
             margin-bottom: 5px;
+        }
+        div{
+            .div-a{
+                margin: 5px;
+                background-color: green;
+                text-align: center;
+                border-radius: 20px;
+                max-width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                border: none;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
         }
     }
     .main-section-2{
@@ -46,7 +63,8 @@
         margin-left: 10px;
         h2{
             font-size: 16px;
-            border: .1px solid black;
+            border-bottom: .1px solid black;
+            opacity: 50%;
         }
     }
     .products2{
@@ -54,7 +72,8 @@
         grid-area: products2;
         h2{
             font-size: 16px;
-            border: .1px solid black;
+            border-bottom: .1px solid black;
+            opacity: 50%;
             margin-right: 10px;
             margin-left: 10px;
         }
