@@ -1,15 +1,40 @@
+const createComponents = () =>{
+    let booleanS = prompt ("Do you want new components on my page?").toLowerCase();
+    if (booleanS == "yes"){
+    do{
+        i = parseInt(prompt("What number of components do you want?"));
+        for (let integer = 0; integer<i; integer++){
+            nameProduct = prompt("Name of product (Motherboard, Graphic, Monitor, etc)");
+            priceProduct2 = parseInt(prompt("Price of this product"));
+            let componente = new Componente(nameProduct,priceProduct2);
+            componentArray2.push(componente); //Inicia los valores de la variable componente
+            let disponibility = prompt("Do you want disponibility?").toLowerCase();
+            if(disponibility == "yes"){
+                componentArray2[integer].disponibilities(); //habilita la disponibilidad
+                let stock = parseInt(prompt("How many stock do you want?"));
+                while((isNaN(stock)) || (stock == 0)){
+                    stock = parseInt(prompt("How many stock do you want?"));
+                }
+                componentArray2[integer].stocks(stock); //habilita la cantidad de stock
+            }
+        }
+        for (let integer = 0; integer<i; integer++){
+            alert("PRODUCT: "+componentArray2[integer].name+" PRICE: $"+componentArray2[integer].price+" disponibility: "+componentArray2[integer].disponibility+" stock: "+componentArray2[integer].stock);
+        }
+        booleanS = prompt("Do you want to continue?").toUpperCase();
+    }while(booleanS != "NO");
+}
+}
 const Intel = () =>{
-    for (const nameProducts of productsIntel){
-        alert("Here are the products of Intel: "+nameProducts.nameS);
-    }
+    const runIntel = productsIntel.map(elementProcessors => elementProcessors.nameS);
+    alert("We have: "+runIntel.join(" "));
     const productProcessor = productsIntel.map (elementProcessors => elementProcessors.nameS); //Recorre el array de productos AMD o Intel
     const priceProcessor = productsIntel.map (elementProcessors => elementProcessors.price);
     runDo(productProcessor,priceProcessor); //llamado a la función runDo() de Intel
 }
 const AMD = () =>{ //Esto genera la lista correspondiente a si es AMD o es Intel
-    for (const nameProducts of productsAMD){
-        alert("Here are the products of AMD: "+nameProducts.nameS);
-    }
+    const runAMD = productsAMD.map(elementProcessors => elementProcessors.nameS);
+    alert("We have: "+runAMD.join(" "));
     const productProcessor = productsAMD.map (elementProcessors => elementProcessors.nameS); //Recorre el array de productos AMD o Intel
     const priceProcessor = productsAMD.map (elementProcessors => elementProcessors.price);
     runDo(productProcessor,priceProcessor); //llamado a la función runDo() AMD
@@ -63,11 +88,28 @@ const productsIntel = [
     {nameS: "i9 12900F", price: 18000},
     {nameS: "i9 12900K", price: 30000}
 ]; //Estos son los productos Intel
-
+class Componente{
+    constructor(name,price) {
+        this.name = name;
+        this.price = price
+        this.disponibility = false;
+        this.stock = 0;
+    }
+    disponibilities(){
+        this.disponibility = true;
+    }
+    stocks(stock){
+         this.stock = stock;
+    }
+}
 //Definición de variables globales
 let nameProduct = "";
 let productsS = "";
+let stock = 0;
+let disponibility = false;
 let priceProduct2 = 0;
+let componentArray2 = [];
+let i;
 //Inicio
 alert("Welcome to TecnoStore");
 alert("Here you can watch the best prices for components of PC in the market");
@@ -91,5 +133,6 @@ if (namesHighBusiness.indexOf(nameProduct)!=-1){
         alert("Sorry, we don't have components of this type. Comeback later :(");
     } //Si es NVIDIA, se cancela
 }
+createComponents(); //llama a la funcion createComponents();
 const x = new Date();
-alert("Thank you for visit TecnoStore in the day: "+x.getDate()+"/"+(x.getMonth()+1)+"/"+x.getFullYear());
+alert("Thank you for visit TecnoStore in the day: "+x.getDate()+"/"+(x.getMonth()+1)+"/"+x.getFullYear()); //Genera una fecha en base a lo que quiero
