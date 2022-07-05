@@ -63,14 +63,14 @@ const runDo = (productProcessor, priceProcessor) =>{ //Esto genera la lista corr
     iva (productsS, priceProduct2);
 }
 const productsAMD = [
-    {nameS: "Ryzen 3 1200", price: 1100, stock:10},
-    {nameS: "Ryzen 3 2200g", price: 1350, stock:10},
-    {nameS: "Ryzen 5 2400g", price: 1800, stock:10},
-    {nameS: "Ryzen 5 3600", price: 2500, stock:10},
-    {nameS: "Ryzen 7 3700x", price: 6500, stock:10},
-    {nameS: "Ryzen 5 5600x", price: 8000, stock:10},
-    {nameS: "Ryzen 9 3900x", price: 9000, stock:10},
-    {nameS: "Ryzen 9 3990xt", price: 13370, stock:10}
+    {nameS: "Ryzen 3 1200", price: 1100},
+    {nameS: "Ryzen 3 2200g", price: 1350},
+    {nameS: "Ryzen 5 2400g", price: 1800},
+    {nameS: "Ryzen 5 3600", price: 2500},
+    {nameS: "Ryzen 7 3700x", price: 6500},
+    {nameS: "Ryzen 5 5600x", price: 8000},
+    {nameS: "Ryzen 9 3900x", price: 9000},
+    {nameS: "Ryzen 9 3990xt", price: 13370}
 ]; //Estos son los productos AMD
 const products = [
     {nameS:"INTEL", stock: true},
