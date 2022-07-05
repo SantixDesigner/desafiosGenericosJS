@@ -105,8 +105,6 @@ class Componente{
 //Definición de variables globales
 let nameProduct = "";
 let productsS = "";
-let stock = 0;
-let disponibility = false;
 let priceProduct2 = 0;
 let componentArray2 = [];
 let i;
